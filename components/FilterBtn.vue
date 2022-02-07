@@ -1,19 +1,13 @@
 <template>
-  <button
-    class="button"
-    :style="{ color: activeColor, background: background }"
-    :class="{ 'no-border': border }"
-  >
-    <img :src="icon" alt="" class="icon" />
+  <button class="button">
     {{ buttonContent }}
+    <img src="/x.svg" alt="" class="icon" />
   </button>
 </template>
 
 <script>
 export default {
   props: {
-    activeColor: { type: String, default: '#344054' },
-    background: { type: String, default: '' },
     buttonContent: {
       type: String,
       default: '',
@@ -21,10 +15,6 @@ export default {
     icon: {
       type: String,
       default: '',
-    },
-    border: {
-      type: Boolean,
-      default: false,
     },
   },
 }
@@ -42,13 +32,15 @@ export default {
   line-height: 20px;
   letter-spacing: 0em;
   background: #ffffff;
-  border: 1px solid #d0d5dd;
+  border: none;
   box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
   border-radius: 8px;
-
+  color: #6941c6;
+  background: #f9f5ff;
+  margin-right: 12px;
   .icon {
-    width: 16px;
-    margin-right: 10.5px;
+    width: 10px;
+    margin-left: 13px;
   }
 }
 

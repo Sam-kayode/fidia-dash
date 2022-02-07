@@ -3,7 +3,7 @@
     <Navbar />
     <OverviewNav /><var></var>
     <div class="main-container">
-      <div class="welcome-section d-flex justify-content-between">
+      <div class="welcome-section d-lg-flex justify-content-between">
         <div class="welcome-container">
           <h1 class="header">Welcome back, Olivia</h1>
           <p class="description-text">
@@ -21,13 +21,38 @@
             button-content="Add"
             background="#7F56D9"
             active-color="#ffffff"
-            border="false"
+            :border="false"
           />
         </div>
       </div>
-      <div class="statCards">
-        <StatCard />
+      <div class="stat-cards">
+        <StatCard
+          v-for="(card, index) in cards"
+          :key="index"
+          :title="card.title"
+          :value="card.value"
+          :percent="card.percent"
+          :increase="card.increase"
+        />
       </div>
+      <div
+        class="filter-bar d-flex justify-content-between flex-column flex-lg-row"
+      >
+        <div class="filters d-flex flex-column d-md-block order-2">
+          <div class="filter-btns order-1 order-md-2 d-md-inline">
+            <FilterBtn button-content="All time" /><FilterBtn
+              button-content="US, AU, +4"
+            />
+          </div>
+          <Button
+            icon="/filter.svg"
+            button-content="More filters"
+            class="edit-btn mr-0"
+          />
+        </div>
+        <div class="search-cont order-1 order-lg-2 order-"><SearchBar /></div>
+      </div>
+      <CustomerTable />
     </div>
   </div>
 </template>
@@ -37,7 +62,16 @@ export default {
   name: 'IndexPage',
   data() {
     return {
-      cards: [{ title: 'Total customers', value: '', percent:'', increase:true }],
+      cards: [
+        {
+          title: 'Total customers',
+          value: 2420,
+          percent: '40%',
+          increase: true,
+        },
+        { title: 'Members', value: 1210, percent: '10%', increase: false },
+        { title: 'Active now', value: 316, percent: '20%', increase: true },
+      ],
     }
   },
 }
@@ -71,16 +105,45 @@ export default {
     text-align: left;
     color: #667085;
   }
+}
 
-  .import-btn {
-    margin-right: 12px;
+.stat-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-gap: 24px;
+  margin-top: 32px;
+}
+
+.filter-bar {
+  margin-top: 34px;
+}
+
+.search-cont {
+  width: 320px;
+}
+
+@include tablet {
+  .stat-cards {
+    display: grid !important;
   }
 
-  .stat-cards{
-     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 24px;
+  .search-cont {
+    width: 100% !important;
+  }
+}
 
+@include mobile {
+  .main-container {
+    height: 64px;
+    padding: 32px 16px;
+
+    .edit-btn {
+      margin-top: 12px;
+    }
+
+    .filter-btns {
+      margin-top: 12px;
+    }
   }
 }
 </style>

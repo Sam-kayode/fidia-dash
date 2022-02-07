@@ -1,5 +1,5 @@
 <template>
-  <div class="navbar">
+  <div class="navbar d-none d-lg-flex">
     <div class="right-nav">
       <ul class="m-0 p-0 nav-links">
         <li v-for="(link, index) in navLinks" :key="index" class="nav-link">
