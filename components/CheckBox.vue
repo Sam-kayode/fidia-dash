@@ -18,7 +18,7 @@ export default {}
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  top:3px;
+  top:-1px;
   height:20px;
   width:20px;
   margin-right: 12px;
