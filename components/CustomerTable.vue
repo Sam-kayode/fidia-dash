@@ -2,7 +2,7 @@
   <client-only>
     <div class="table-container">
       <table>
-        <tr>
+        <tr class="divider">
           <th class="">
             <div class="d-flex align-items-center">
               <CheckBox class="mt-0" />
@@ -14,31 +14,18 @@
           <th>Users</th>
           <th>About</th>
           <th></th>
-          <th></th>
         </tr>
-        <tr>
-          <td>
-            <div class="d-flex align-items-center">
-              <CheckBox />
-              <div>
-                <img src="/customers/Catalog.svg" alt="" class="company-icon" />
-              </div>
-              <div>
-                <p class="m-0 name">Catalog</p>
-                <p class="m-0 site">catalogapp.io</p>
-              </div>
-            </div>
-          </td>
-          <td><ProgressBar /></td>
-          <td>
-            <span v-if="customer" class="customer">Customer</span>
-            <span v-else class="churned">Churned</span>
-          </td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
+        <Customer
+          v-for="(company, index) in companies"
+          :key="index"
+          :name="company.name"
+          :site="company.site"
+          :width="company.progress"
+          :customer="company.customer"
+          :users="company.users"
+          :about="company.about"
+          :desc="company.desc"
+        />
       </table>
     </div>
   </client-only>
@@ -49,7 +36,78 @@ export default {
   name: 'CustomerTable',
   data() {
     return {
-        users:[]
+      companies: [
+        {
+          name: 'Catalog',
+          site: 'catalogapp.io',
+          progress: 80,
+          customer: true,
+          users: [
+            'emma',
+            'joe',
+            'jake',
+            'sophie',
+            'eve',
+            'leia',
+            'jema',
+            'tom',
+            'mary',
+            'kate',
+          ],
+          about: 'Content curating app',
+          desc: 'Brings all your news into one place',
+        },
+        {
+          name: 'Circooles',
+          site: 'getcirooles.com',
+          progress: 70,
+          customer: false,
+          users: [
+            'jema',
+            'kate',
+            'mary',
+            'emma',
+            'tumi',
+            'leia',
+            'joe',
+            'jake',
+            'sophie',
+            'eve',
+            'tom',
+            'ade',
+            'love',
+          ],
+          about: 'Design software',
+          desc: 'Super lightweight design app',
+        },
+        {
+          name: 'Command+R',
+          site: 'cmdr.ai',
+          progress: 40,
+          customer: true,
+          users: ['tumi', 'ade', 'tom', 'leia', 'love', 'jema', 'kate'],
+          about: 'Data prediction',
+          desc: 'AI and machine learning data',
+        },
+        {
+          name: 'Hourglass',
+          site: 'hourglass.app',
+          progress: 90,
+          customer: true,
+          users: ['eve', 'joe', 'jema', 'kate', 'ade'],
+          about: 'Productivity app',
+          desc: 'Time management and productivity',
+        },
+        {
+          name: 'Layers',
+          site: 'getlayers.io',
+          progress: 20,
+          customer: false,
+          users: ['jake', 'jema', 'ade', 'leia', 'tumi', 'kate'],
+          about: 'Web app integrations',
+          desc: 'Connect web apps seamlessly',
+        },
+      ],
     }
   },
 }
@@ -58,16 +116,17 @@ export default {
 <style lang="scss" scoped>
 .table-container {
   overflow-x: auto;
+  box-shadow: 0px 4px 8px -2px rgba(16, 24, 40, 0.1),
+    0px 2px 4px -2px rgba(16, 24, 40, 0.06);
+  border-radius: 8px;
+  margin-top: 27px;
 }
+
 table {
   border-collapse: collapse;
-  table-layout: fixed;
-}
-td,
-th {
-  vertical-align: middle;
-  white-space: nowrap;
-  box-sizing: border-box !important;
+  min-width: 100%;
+  border: 1px solid #eaecf0;
+  box-sizing: border-box;
 }
 
 th {
@@ -79,70 +138,28 @@ th {
   font-weight: 500;
   letter-spacing: 0em;
   color: #667085;
-}
+  vertical-align: middle;
+  white-space: nowrap;
+  box-sizing: border-box !important;
 
-td {
-  height: 72px;
-  padding: 0 24px;
-
-  &:nth-child(1) {
-    min-width: 370px;
-  }
-
-  .company-icon {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
+  &:nth-child(last) {
+    padding: 28px;
   }
 }
 
-td .name {
-  font-family: Inter;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 20px;
-  letter-spacing: 0em;
-  text-align: left;
-  color: #101828;
+.divider {
+  border-bottom: 1px solid #eaecf0;
+  width: 100%;
 }
 
-.site {
-  font-family: Inter;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 20px;
-  letter-spacing: 0em;
-  text-align: left;
-  color: #667085;
-}
-
-.customer {
-  font-family: Inter;
-  font-size: 12px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 18px;
-  letter-spacing: 0em;
-  text-align: center;
-  color: #027a48;
-  background: #ecfdf3;
-  border-radius: 16px;
-}
-
-.churned {
-  //styleName: Text xs/Medium;
-  font-family: Inter;
-  font-size: 12px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 18px;
-  letter-spacing: 0em;
-  text-align: center;
-  color: #344054;
-  padding: 2px 8px;
-  background: #f2f4f7;
-  border-radius: 16px;
+@include mobile {
+  th {
+    &:nth-child(n + 3) {
+      display: none;
+    }
+    &:nth-child(1) {
+      min-width: 0;
+    }
+  }
 }
 </style>

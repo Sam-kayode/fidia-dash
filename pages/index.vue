@@ -21,7 +21,7 @@
             button-content="Add"
             background="#7F56D9"
             active-color="#ffffff"
-            :border="false"
+            :border=false
           />
         </div>
       </div>

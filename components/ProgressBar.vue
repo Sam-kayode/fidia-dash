@@ -1,11 +1,22 @@
 <template>
   <div class="progress">
-    <div class="progress-value"></div>
+    <div class="progress-value" :style="{ width: width + '%' }"></div>
   </div>
 </template>
 
 <script>
-export default {}
+export default {
+  name: 'ProgressBar',
+  props: {
+    width: {
+      type: Number,
+      default: null,
+    },
+  },
+  data() {
+    return {}
+  },
+}
 </script>
 
 <style>
@@ -25,6 +36,5 @@ export default {}
   border-radius: 4px;
   background: #7f56d9;
   height: 8px;
-  width: 30%;
 }
 </style>

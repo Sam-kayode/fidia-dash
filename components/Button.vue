@@ -2,7 +2,7 @@
   <button
     class="button"
     :style="{ color: activeColor, background: background }"
-    :class="{ 'no-border': border }"
+    :class="{ noborder: !border }"
   >
     <img :src="icon" alt="" class="icon" />
     {{ buttonContent }}
@@ -24,7 +24,7 @@ export default {
     },
     border: {
       type: Boolean,
-      default: false,
+      default: true,
     },
   },
 }
@@ -39,7 +39,7 @@ export default {
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
-  line-height: 20px;
+  line-height: 17px;
   letter-spacing: 0em;
   background: #ffffff;
   border: 1px solid #d0d5dd;
@@ -52,7 +52,7 @@ export default {
   }
 }
 
-.no-border {
+.noborder {
   border: none !important;
 }
 </style>
