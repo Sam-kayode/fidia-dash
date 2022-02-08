@@ -102,6 +102,11 @@ export default {
 .navbar {
   height: 64px;
   padding: 0px 8px 0 16px;
+  position:fixed;
+  top:0;
+  width:100vw;
+  background: #ffffff;
+  z-index:9999999;
 }
 }
 </style>

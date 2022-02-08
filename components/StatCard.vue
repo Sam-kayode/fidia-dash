@@ -128,9 +128,16 @@ export default {
   }
 }
 
-@include mobile{
-.graph {
+@include mobile {
+  .stats {
+    .graph {
       max-width: 96px !important;
     }
+
+    .value {
+      font-size: 30px !important;
+      line-height: 38px;
+    }
+  }
 }
 </style>

@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <div class="contain">
     <Navbar />
-    <OverviewNav /><var></var>
+    <OverviewNav />
     <div class="main-container">
       <div class="welcome-section d-lg-flex justify-content-between">
         <div class="welcome-container">
@@ -21,7 +21,7 @@
             button-content="Add"
             background="#7F56D9"
             active-color="#ffffff"
-            :border=false
+            :border="false"
           />
         </div>
       </div>
@@ -52,6 +52,8 @@
         </div>
         <div class="search-cont order-1 order-lg-2 order-"><SearchBar /></div>
       </div>
+    </div>
+    <div class="customer-table">
       <CustomerTable />
     </div>
   </div>
@@ -104,6 +106,10 @@ export default {
     text-align: left;
     color: #667085;
   }
+
+  .filters {
+    margin-top: 12px;
+  }
 }
 
 .stat-cards {
@@ -121,6 +127,13 @@ export default {
   width: 320px;
 }
 
+.customer-table {
+  padding: 0 112px;
+}
+
+.contain {
+  padding-bottom: 96px;
+}
 @include tablet {
   .stat-cards {
     display: grid !important;
@@ -133,8 +146,8 @@ export default {
 
 @include mobile {
   .main-container {
-    height: 64px;
     padding: 32px 16px;
+    margin-top: 64px;
 
     .edit-btn {
       margin-top: 12px;
@@ -143,6 +156,18 @@ export default {
     .filter-btns {
       margin-top: 12px;
     }
+
+    .header {
+      font-size: 24px;
+      line-height: 32px;
+    }
+  }
+
+  .customer-table {
+    padding: 0 0 !important;
+  }
+  .contain {
+    padding-bottom: 0px;
   }
 }
 </style>

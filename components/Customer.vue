@@ -110,7 +110,7 @@ td {
   }
 }
 
-td .name {
+.name {
   font-family: Inter;
   font-size: 14px;
   font-style: normal;
@@ -143,6 +143,10 @@ td .name {
   color: #027a48;
   background: #ecfdf3;
   border-radius: 16px;
+}
+
+.company-icon{
+    margin-right:12px;
 }
 
 .churned {

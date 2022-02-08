@@ -4,7 +4,7 @@
     :style="{ color: activeColor, background: background }"
     :class="{ noborder: !border }"
   >
-    <img :src="icon" alt="" class="icon" />
+    <img v-if="icon" :src="icon" alt="" class="icon" /> 
     {{ buttonContent }}
   </button>
 </template>

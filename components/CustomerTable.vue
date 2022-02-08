@@ -6,7 +6,7 @@
           <th class="">
             <div class="d-flex align-items-center">
               <CheckBox class="mt-0" />
-              <div>Company<b-icon class="arrow-down"></b-icon></div>
+              <div>Company <img src="/arrow-down.svg" alt="" /></div>
             </div>
           </th>
           <th>License use</th>
@@ -27,6 +27,15 @@
           :desc="company.desc"
         />
       </table>
+      <div class="d-flex justify-content-between align-items-center table-base">
+        <b-icon icon="arrow-left" class="d-sm-none"></b-icon>
+        <div class="nav-btns d-md-flex align-items-center">
+          <Button button-content="Previous" class="previous" />
+          <Button button-content="Next" />
+        </div>
+        <div class="p-0 m-0 page">Page <span>1</span> 1 of <span>10</span></div>
+        <b-icon icon="arrow-right" class="d-sm-none"></b-icon>
+      </div>
     </div>
   </client-only>
 </template>
@@ -160,6 +169,24 @@ export default {
     0px 2px 4px -2px rgba(16, 24, 40, 0.06);
   border-radius: 8px;
   margin-top: 27px;
+
+  &::-webkit-scrollbar {
+    height: 0.3em;
+    cursor: pointer;
+  }
+
+  &::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(31, 26, 26, 0.1);
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: $input-text;
+    width: 40px !important;
+    cursor: pointer;
+  }
 }
 
 table {
@@ -168,7 +195,9 @@ table {
   border: 1px solid #eaecf0;
   box-sizing: border-box;
 }
-
+.previous {
+  margin-right: 12px;
+}
 th {
   height: 44px;
   padding: 0 24px;
@@ -192,6 +221,36 @@ th {
   width: 100%;
 }
 
+.table-base {
+  height: 65px;
+  border-top: 1px solid #eaecf0;
+  padding: 0px 24px;
+  width: inherit;
+
+  .nav-btns {
+    height: 100%;
+  }
+
+  .page {
+    //styleName: Text sm/Medium;
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 20px;
+    letter-spacing: 0em;
+    text-align: left;
+
+    span {
+      font-weight: 500;
+    }
+  }
+
+  svg{
+      cursor: pointer;
+  }
+}
+
 @include mobile {
   th {
     &:nth-child(n + 3) {
@@ -200,6 +259,9 @@ th {
     &:nth-child(1) {
       min-width: 0;
     }
+  }
+  .nav-btns {
+    display: none;
   }
 }
 </style>
