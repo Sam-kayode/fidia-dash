@@ -46,7 +46,7 @@ export default {
 
   styleResources: {
     // your settings here
-    scss: ['@/assets/scss/_variables.scss', '@/assets/scss/_responsive.scss'],
+    scss: ['@/assets/scss/_responsive.scss'],
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build

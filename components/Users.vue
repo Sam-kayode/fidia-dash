@@ -41,7 +41,7 @@ export default {
 }
 
 .extras {
-  font-family: Inter;
+  font-family: Inter, 'sans-serif';
   font-size: 12px;
   font-style: normal;
   font-weight: 500;

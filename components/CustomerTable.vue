@@ -5,7 +5,7 @@
         <tr class="divider">
           <th class="">
             <div class="d-flex align-items-center">
-              <CheckBox class="mt-0" />
+              <CheckBox class="mt-0" indeterminate=true />
               <div>Company <img src="/arrow-down.svg" alt="" /></div>
             </div>
           </th>
@@ -27,6 +27,8 @@
           :desc="company.desc"
         />
       </table>
+      <div class="border d-sm-none"></div>
+
       <div class="d-flex justify-content-between align-items-center table-base">
         <b-icon icon="arrow-left" class="d-sm-none"></b-icon>
         <div class="nav-btns d-md-flex align-items-center">
@@ -168,8 +170,7 @@ export default {
   box-shadow: 0px 4px 8px -2px rgba(16, 24, 40, 0.1),
     0px 2px 4px -2px rgba(16, 24, 40, 0.06);
   border-radius: 8px;
-  margin-top: 27px;
-
+  margin-top: 25px;
   &::-webkit-scrollbar {
     height: 0.3em;
     cursor: pointer;
@@ -183,7 +184,7 @@ export default {
 
   &::-webkit-scrollbar-thumb {
     border-radius: 10px;
-    background: $input-text;
+    background: grey;
     width: 40px !important;
     cursor: pointer;
   }
@@ -192,7 +193,6 @@ export default {
 table {
   border-collapse: collapse;
   min-width: 100%;
-  border: 1px solid #eaecf0;
   box-sizing: border-box;
 }
 .previous {
@@ -201,7 +201,7 @@ table {
 th {
   height: 44px;
   padding: 0 24px;
-  font-family: Inter;
+  font-family: Inter, 'sans-serif';
   font-size: 12px;
   font-style: normal;
   font-weight: 500;
@@ -233,7 +233,7 @@ th {
 
   .page {
     //styleName: Text sm/Medium;
-    font-family: Inter;
+    font-family: Inter, 'sans-serif';
     font-size: 14px;
     font-weight: 400;
     font-style: normal;
@@ -246,8 +246,8 @@ th {
     }
   }
 
-  svg{
-      cursor: pointer;
+  svg {
+    cursor: pointer;
   }
 }
 
@@ -262,6 +262,18 @@ th {
   }
   .nav-btns {
     display: none;
+  }
+  .border {
+    position: relative;
+    height: 1px;
+    top: 30px;
+    right: 0;
+    background: #eaecf0;
+    width: calc(100vw - 48px);
+    margin: 0 auto;
+  }
+  .table-base {
+    height: 117px !important;
   }
 }
 </style>

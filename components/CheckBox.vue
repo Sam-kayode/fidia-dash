@@ -1,15 +1,23 @@
 <template>
-  <label class="check-container my-0">
+  <label class="check-container my-0" :class="{indeterminate:indeterminate}">
     <input type="checkbox" checked="checked" />
     <span class="checkmark"></span>
   </label>
 </template>
 
 <script>
-export default {}
+export default {
+  name: 'CheckBox',
+  props: {
+    indeterminate: {
+      type: Boolean,
+      default: false,
+    },
+  },
+}
 </script>
 
-<style>
+<style lang="scss">
 .check-container {
   position: relative;
   cursor: pointer;
@@ -18,9 +26,9 @@ export default {}
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  top:-1px;
-  height:20px;
-  width:20px;
+  top: -1px;
+  height: 20px;
+  width: 20px;
   margin-right: 12px;
 }
 
@@ -73,5 +81,19 @@ export default {}
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
+}
+
+.indeterminate {
+ .checkmark:after {
+    left: 7px;
+    top: 3px;
+    width: 5px;
+    height: 10px;
+    border: solid #7f56d9;
+    border-width: 0 2px 0 0;
+    -webkit-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+  }
 }
 </style>

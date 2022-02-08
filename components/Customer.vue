@@ -87,7 +87,7 @@ th {
 th {
   height: 44px;
   padding: 0 24px;
-  font-family: Inter;
+  font-family: Inter, 'sans-serif';
   font-size: 12px;
   font-style: normal;
   font-weight: 500;
@@ -111,7 +111,7 @@ td {
 }
 
 .name {
-  font-family: Inter;
+  font-family: Inter, 'sans-serif';
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
@@ -122,7 +122,7 @@ td {
 }
 
 .site {
-  font-family: Inter;
+  font-family: Inter, 'sans-serif';
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -133,7 +133,7 @@ td {
 }
 
 .customer {
-  font-family: Inter;
+  font-family: Inter, 'sans-serif';
   font-size: 12px;
   font-style: normal;
   font-weight: 500;
@@ -150,7 +150,7 @@ td {
 }
 
 .churned {
-  font-family: Inter;
+  font-family: Inter, 'sans-serif';
   font-size: 12px;
   font-style: normal;
   font-weight: 500;
@@ -163,7 +163,7 @@ td {
   border-radius: 16px;
 }
 .about {
-  font-family: Inter;
+  font-family: Inter, 'sans-serif';
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -174,7 +174,7 @@ td {
 }
 
 .about-desc {
-  font-family: Inter;
+  font-family: Inter, 'sans-serif';
   font-size: 14px;
   font-style: normal;
   font-weight: 400;

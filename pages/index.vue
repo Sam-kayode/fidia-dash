@@ -82,10 +82,10 @@ export default {
 <style lang="scss">
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap');
 .main-container {
-  padding: 48px 112px;
+  padding: 48px 112px 0px 112px;
 
   .header {
-    font-family: Inter;
+    font-family: Inter, 'sans-serif';
     font-size: 30px;
     font-style: normal;
     font-weight: 500;
@@ -97,7 +97,7 @@ export default {
   }
 
   .description-text {
-    font-family: Inter;
+    font-family: Inter, 'sans-serif';
     font-size: 16px;
     font-style: normal;
     font-weight: 400;

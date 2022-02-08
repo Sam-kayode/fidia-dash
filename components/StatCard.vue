@@ -57,7 +57,7 @@ export default {
   border-radius: 8px;
 
   .card-description {
-    font-family: Inter;
+    font-family: Inter, 'sans-serif';
     font-size: 16px;
     font-style: normal;
     font-weight: 500;
@@ -100,7 +100,7 @@ export default {
     }
 
     .last {
-      font-family: Inter;
+      font-family: Inter, 'sans-serif';
       font-size: 14px;
       font-style: normal;
       font-weight: 500;
@@ -111,7 +111,7 @@ export default {
     }
 
     .percent {
-      font-family: Inter;
+      font-family: Inter, 'sans-serif';
       font-size: 14px;
       font-style: normal;
       font-weight: 500;
