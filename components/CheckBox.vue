@@ -83,17 +83,4 @@ export default {
   transform: rotate(45deg);
 }
 
-.indeterminate {
- .checkmark:after {
-    left: 7px;
-    top: 3px;
-    width: 5px;
-    height: 10px;
-    border: solid #7f56d9;
-    border-width: 0 2px 0 0;
-    -webkit-transform: rotate(90deg);
-    -ms-transform: rotate(90deg);
-    transform: rotate(90deg);
-  }
-}
 </style>
