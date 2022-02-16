@@ -60,8 +60,6 @@ export default {
   height:100%;
 }
 
-
-
 .nav-link {
   font-family: 'Inter', sans-serif;
   padding: 8px 12px;
