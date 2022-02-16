@@ -18,6 +18,7 @@ export default {
 </script>
 
 <style lang="scss">
+
 .check-container {
   position: relative;
   cursor: pointer;
